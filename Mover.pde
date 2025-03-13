@@ -1,17 +1,15 @@
 class Mover {
 
 
-  float x, y;
-  float vx, vy;
+   PVector loc;
+  PVector vel;
   float d;
 
 
   Mover () {
     d = 100;
-    x = random( 0, width);
-    y = random ( 0, height);
-    vx = random ( -1, 1);
-    vy = random ( -1, 1);
+   loc =  new PVector (random( 0, width),random( 0, width));
+   vel = new PVector (random (-1,1), random ( 1,1)); 
   }
 
 
@@ -21,9 +19,7 @@ class Mover {
     bounceOfEdge();
   }
   void move () {
-
-    x= x+vx;
-    y=y+vy;
+loc.add(vel);
   }
 
 

@@ -5,11 +5,11 @@ int numberOfMovers = 50;
 
 void setup() {
   size ( 800, 800);
-  mover = new Mover [ numberOfMovers];
+  movers = new Mover [ numberOfMovers];
 
   int i = 0 ;
   while ( i< numberOfMovers) {
-    mover[i] = new Mover();
+    movers[i] = new Mover();
     i++;
   }
 }
@@ -29,10 +29,4 @@ void draw () {
 
     i++;
   }
-}
-
-
-
-
-
 }

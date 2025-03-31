@@ -1,32 +1,39 @@
-Mover [] movers;
+ArrayList <Mover> movers;
 int numberOfMovers = 50;
-
 
 
 void setup() {
   size ( 800, 800);
-  movers = new Mover [ numberOfMovers];
+  movers = new ArrayList();
 
   int i = 0 ;
   while ( i< numberOfMovers) {
-    movers[i] = new Mover();
+    movers.add( new Mover());
     i++;
   }
 }
 
 
 void draw () {
-
-
-
   background ( #648BBA);
   int i = 0 ;
-  while ( i < numberOfMovers) {
-
-    movers[i].act();
-    movers[i].showBody();
-    movers [i].showConnections();
-
+  while ( i < movers.size()) {
+Mover m = movers.get(i);
+    m.act();
+    m.showBody();
+    m .showConnections();
+    if ( m.alive ==false){
+     movers.remove(i);
+      
+      
+    }else 
     i++;
   }
+}
+
+void mouseReleased (){
+
+  
+  
+  
 }
